@@ -1,5 +1,6 @@
 ﻿
 
+using Catalog.Api.Products.CreateProducts;
 using System.Reflection;
 
 namespace Catalog.Api.Products
