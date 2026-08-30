@@ -38,7 +38,7 @@ builder.Services.AddHealthChecks()
 var app = builder.Build();
 
 app.MapCarter();
-
+ 
 await app.InitialiseDatabaseAsync();
 
 app.UseExceptionHandler(options => { });
