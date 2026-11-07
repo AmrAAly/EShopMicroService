@@ -41,10 +41,13 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__Database=Server=basketdb;Port=5432;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
       - ConnectionStrings__Redis=basketcache:6379
+      - GrpcSettings__DiscountUrl=http://discount.grpc:8082
     depends_on:
       basketdb:
         condition: service_healthy
       basketcache:
+        condition: service_started
+      discount.grpc:
         condition: service_started
 
   discount.grpc:
